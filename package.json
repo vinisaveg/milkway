@@ -1,0 +1,26 @@
+{
+  "name": "milkway",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vinisaveg/milkway.git",
+  "author": "vinisaveg <viniisaveeg@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "10.0.5",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/next": "^9.0.0",
+    "@types/node": "^14.14.22",
+    "@types/react": "^17.0.0",
+    "@types/styled-components": "^5.1.7",
+    "typescript": "^4.1.3"
+  }
+}
