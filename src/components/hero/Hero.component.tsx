@@ -1,7 +1,13 @@
 import { FunctionComponent } from 'react';
 
+import Navbar from '../navbar/Navbar.component';
+
 const Hero: FunctionComponent = () => {
-    return <div></div>;
+    return (
+        <>
+            <Navbar />
+        </>
+    );
 };
 
 export default Hero;

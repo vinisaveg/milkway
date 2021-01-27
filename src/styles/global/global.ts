@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 
 a {
     text-decoration: none;
+    color: ${(props) => props.theme.colors.text.dark};
 }
 
 body {

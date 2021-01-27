@@ -8,7 +8,7 @@ export const Main = styled.main`
     align-items: center;
 
     margin: 0 auto;
-    padding: 60px 150px;
+    padding: 60px 120px;
 
     box-sizing: border-box;
 `;
