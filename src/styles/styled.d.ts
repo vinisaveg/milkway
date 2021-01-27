@@ -16,5 +16,8 @@ declare module 'styled-components' {
             primary: string;
             logo: string;
         };
+        misc: {
+            borderRadius: string;
+        };
     }
 }

@@ -1,14 +1,13 @@
 import Head from 'next/head';
 
 import { FunctionComponent } from 'react';
-
-import MilkshakeIcon from '../assets/icons/milkshake-icon.svg';
+import { Button, ButtonWrapper } from '../styles/shared/button/button';
 
 const Home: FunctionComponent = () => {
     return (
         <div>
             <Head>
-                <title>milkway | Drink you way to the moon</title>
+                <title>milkway | Drink your way to the moon</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
@@ -22,9 +21,15 @@ const Home: FunctionComponent = () => {
                     alignItems: 'center',
                 }}
             >
-                <h1 style={{ marginBottom: '30px' }}>Welcome to milkway!</h1>
-
-                <MilkshakeIcon />
+                <ButtonWrapper>
+                    <Button
+                        target="_blank"
+                        href="https://vinisaveg.com"
+                        minWidth="100px"
+                    >
+                        Sign in
+                    </Button>
+                </ButtonWrapper>
             </main>
         </div>
     );

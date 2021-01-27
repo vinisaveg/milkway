@@ -5,7 +5,7 @@ const theme: DefaultTheme = {
     colors: {
         primary: '#FF78CE',
         secondary: '#6070FF',
-        background: '#F6F6F6',
+        background: '#F3F3F3',
         text: {
             light: '#FFFFFF',
             dark: '#0B2641',
@@ -14,6 +14,9 @@ const theme: DefaultTheme = {
     fonts: {
         primary: 'Lato',
         logo: 'Fredoka One',
+    },
+    misc: {
+        borderRadius: '8px',
     },
 };
 
