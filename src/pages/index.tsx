@@ -1,38 +1,29 @@
+import { FunctionComponent } from 'react';
 import Head from 'next/head';
 
-import { FunctionComponent } from 'react';
-import { Button, ButtonWrapper } from '../styles/shared/button/button';
+import { Main } from '../styles/pages/index/index.styles';
+import { Button, ButtonWrapper } from '../styles/shared/button/button.styles';
 
-const Home: FunctionComponent = () => {
+const Index: FunctionComponent = () => {
     return (
-        <div>
+        <>
             <Head>
                 <title>milkway | Drink your way to the moon</title>
-                <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main
-                style={{
-                    width: '100%',
-                    height: '100vh',
-                    display: 'flex',
-                    flexFlow: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                }}
-            >
-                <ButtonWrapper>
+            <Main>
+                <ButtonWrapper width="150px" color="green">
                     <Button
                         target="_blank"
                         href="https://vinisaveg.com"
-                        minWidth="100px"
+                        color="green"
                     >
                         Sign in
                     </Button>
                 </ButtonWrapper>
-            </main>
-        </div>
+            </Main>
+        </>
     );
 };
 
-export default Home;
+export default Index;

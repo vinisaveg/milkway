@@ -5,6 +5,9 @@ const theme: DefaultTheme = {
     colors: {
         primary: '#FF78CE',
         secondary: '#6070FF',
+        transparent: 'rgba(255, 255, 255, 0.3)',
+        red: '#FF4959',
+        green: '#04DEA8',
         background: '#F3F3F3',
         text: {
             light: '#FFFFFF',

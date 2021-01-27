@@ -9,7 +9,7 @@ import theme from '../styles/theme/theme';
 const MyApp: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
     return (
         <ThemeProvider theme={theme}>
-            <Component {...pageProps} />;
+            <Component {...pageProps} />
             <GlobalStyle />
         </ThemeProvider>
     );
