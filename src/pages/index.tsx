@@ -2,7 +2,8 @@ import { FunctionComponent } from 'react';
 import Head from 'next/head';
 
 import { Main } from '../styles/pages/index/index.styles';
-import Hero from '../components/hero/Hero.component';
+
+import Hero from '../sections/hero/Hero.component';
 
 const Index: FunctionComponent = () => {
     return (

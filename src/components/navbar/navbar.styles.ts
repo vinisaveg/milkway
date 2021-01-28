@@ -19,6 +19,7 @@ export const NavWrapper = styled.div`
 `;
 
 export const NavLink = styled.a`
+    font-size: 20px;
     color: ${(props) => props.theme.colors.text.light};
     margin-right: 60px;
     cursor: pointer;

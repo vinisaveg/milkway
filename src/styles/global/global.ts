@@ -33,9 +33,6 @@ a {
     color: ${(props) => props.theme.colors.text.dark};
 }
 
-body {
-	line-height: 1;
-}
 ol, ul {
 	list-style: none;
 }
