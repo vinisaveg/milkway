@@ -57,7 +57,7 @@ export const TipWrapper = styled.div`
 `;
 
 export const TipWrapperText = styled(TipWrapper)`
-    max-width: 280px;
+    /* max-width: 280px; */
     flex-flow: column;
     justify-content: center;
     align-items: flex-start;

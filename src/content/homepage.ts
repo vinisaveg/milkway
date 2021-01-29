@@ -35,10 +35,10 @@ export default {
                 'That’s even more simple. A svg as a milkshake icon will be filled with the colors that you choose from the color picker',
             tip: 'Choose wisely, and your colors will make the icon POP',
         },
-        why: {
-            title: 'Share your briliant and tasty recipe to the community',
-            text:
-                'Let the world know about your expertise on making the best and most flavored milkshake.',
-        },
+    },
+    share: {
+        title: 'Share your briliant and tasty recipe to the community',
+        text:
+            'Let the world know about your expertise on making the best and most flavored milkshake.',
     },
 };
