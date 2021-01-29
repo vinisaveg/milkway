@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
-export const HeroWrapper = styled.div`
+export const HeroWrapper = styled.section`
     width: 100%;
     position: relative;
     display: flex;

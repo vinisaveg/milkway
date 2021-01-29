@@ -3,8 +3,8 @@ import Head from 'next/head';
 
 import { Main } from '../styles/pages/index/index.styles';
 
-import Hero from '../sections/hero/Hero.component';
-import About from '../sections/about/About.component';
+import Hero from '../sections/hero/Hero.section';
+import About from '../sections/about/About.section';
 
 const Index: FunctionComponent = () => {
     return (
