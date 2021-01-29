@@ -8,6 +8,7 @@ const theme: DefaultTheme = {
         transparent: 'rgba(255, 255, 255, 0.3)',
         red: '#FF4959',
         green: '#04DEA8',
+        darkBlue: '#0B2641',
         background: '#F3F3F3',
         text: {
             light: '#FFFFFF',

@@ -9,7 +9,6 @@ export const Main = styled.main`
 
     margin: 0 auto;
     padding: 50px 120px;
-    overflow: hidden;
 
     box-sizing: border-box;
 `;

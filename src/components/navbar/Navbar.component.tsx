@@ -21,9 +21,7 @@ const Navbar: FunctionComponent = () => {
                     <NavLink>explore</NavLink>
                 </Link>
 
-                <Link href="#about" passHref>
-                    <NavLink>about</NavLink>
-                </Link>
+                <NavLink href="#about">about</NavLink>
 
                 <Link href="/signin" passHref>
                     <NavLink>sign in</NavLink>

@@ -23,6 +23,17 @@ time, mark, audio, video {
 	vertical-align: baseline;
 }
 
+html, body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import { Main } from '../styles/pages/index/index.styles';
 
 import Hero from '../sections/hero/Hero.component';
+import About from '../sections/about/About.component';
 
 const Index: FunctionComponent = () => {
     return (
@@ -14,6 +15,8 @@ const Index: FunctionComponent = () => {
 
             <Main>
                 <Hero />
+
+                <About />
             </Main>
         </>
     );
