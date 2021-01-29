@@ -50,12 +50,14 @@ export const FeatureIcon = styled.div`
 `;
 
 export const FeatureTitle = styled.h3`
+    color: ${(props) => props.theme.colors.text.dark};
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 30px;
 `;
 
 export const FeatureText = styled.p`
+    color: ${(props) => props.theme.colors.text.dark};
     min-height: 60px;
     max-width: 200px;
     font-size: 16px;

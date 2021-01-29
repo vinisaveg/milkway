@@ -32,7 +32,7 @@ export default {
         how: {
             title: 'How is it done? Some mystical css clip path?',
             text:
-                'That’s even more simple. A svg as a milkshake icon will be filled with the colors choosed from the color picker',
+                'That’s even more simple. A svg as a milkshake icon will be filled with the colors that you choose from the color picker',
             tip: 'Choose wisely, and your colors will make the icon POP',
         },
         why: {
