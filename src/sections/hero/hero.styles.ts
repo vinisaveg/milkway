@@ -55,17 +55,17 @@ export const BackgroundLayer = styled.div`
     top: 0;
     left: 0;
     z-index: -1;
-    width: 70%;
-    height: 100vh;
+    width: 75%;
+    height: 1500px;
     background: linear-gradient(220deg, #ff4959, #6070ff, #ff78ce);
-    background-size: 600% 600%;
-    clip-path: polygon(100% 0, 0 0, 0 115%);
+    background-size: 900% 900%;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
     animation: ${backgroundAnimation} 21s ease infinite;
 `;
 
 export const Glass = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 1500px;
     clip-path: polygon(100% 0, 0 0, 0 100%);
     background-color: rgba(255, 255, 255, 0);
     backdrop-filter: blur(300px);
