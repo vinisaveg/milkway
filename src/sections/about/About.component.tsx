@@ -39,7 +39,7 @@ const About: FunctionComponent = () => {
 
                 <TipWrapper>
                     <AboutImage
-                        width="40%"
+                        width="50%"
                         src={AboutImage2}
                         alt="About the icon"
                     />

@@ -15,6 +15,10 @@ export const SideWrapper = styled.div`
     display: flex;
     justify-content: center;
     flex-flow: column;
+
+    &&:last-child {
+        margin-left: 50px;
+    }
 `;
 
 export const Title = styled.h2`

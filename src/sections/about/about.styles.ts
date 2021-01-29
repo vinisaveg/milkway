@@ -10,6 +10,8 @@ export const AboutWrapper = styled.div`
 
     box-sizing: border-box;
     background-color: ${(props) => props.theme.colors.darkBlue};
+
+    /* @media only screen and (max-width: 1250px) {} */
 `;
 
 export const SideWrapper = styled.div`
@@ -18,8 +20,6 @@ export const SideWrapper = styled.div`
     display: flex;
     justify-content: center;
     flex-flow: column;
-
-    /* padding: 0px 30px; */
 
     &&:last-child {
         margin-left: 50px;
@@ -45,6 +45,7 @@ interface AboutImageProps {
 }
 
 export const AboutImage = styled.img<AboutImageProps>`
+    max-width: 500px;
     width: ${(props) => props.width || 'auto'};
 `;
 
