@@ -6,6 +6,7 @@ import { Main } from '../styles/pages/index/index.styles';
 import Hero from '../sections/hero/Hero.section';
 import About from '../sections/about/About.section';
 import Share from '../sections/share/Share.section';
+import Footer from '../sections/footer/Footer.section';
 
 const Index: FunctionComponent = () => {
     return (
@@ -21,6 +22,8 @@ const Index: FunctionComponent = () => {
 
                 <Share />
             </Main>
+
+            <Footer />
         </>
     );
 };

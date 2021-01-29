@@ -25,6 +25,7 @@ export const SideWrapper = styled.div`
         margin-left: 50px;
     }
 `;
+
 export const Title = styled.h3`
     max-width: 600px;
     font-size: 42px;

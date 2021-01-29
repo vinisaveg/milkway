@@ -41,4 +41,61 @@ export default {
         text:
             'Let the world know about your expertise on making the best and most flavored milkshake.',
     },
+    footer: {
+        projectLink: 'github.com/vinisaveg/milkway',
+        links: {
+            first: {
+                title: 'Access',
+                link1: {
+                    name: 'Sign In',
+                    url: '/signin',
+                },
+                link2: {
+                    name: 'Sign up',
+                    url: '/signup',
+                },
+                link3: {
+                    name: 'Help',
+                    url: '/help',
+                },
+                link4: {
+                    name: 'Forgot Password',
+                    url: '/forgotpass',
+                },
+            },
+            second: {
+                title: 'Explore',
+                link1: {
+                    name: 'Catalog',
+                    url: '/catalog',
+                },
+                link2: {
+                    name: 'Project',
+                    url: '/project',
+                },
+            },
+            third: {
+                title: 'Contact',
+                link1: {
+                    name: 'Github',
+                    url: 'https://github.com/vinisaveg/milkway',
+                },
+                link2: {
+                    name: 'Instagram',
+                    url: 'https://instagram.com/vinisaveg',
+                },
+            },
+            fourth: {
+                title: 'Support',
+                link1: {
+                    name: 'Report issue',
+                    url: 'https://github.com/vinisaveg/milkway/issues',
+                },
+                link2: {
+                    name: 'Request feature',
+                    url: 'https://github.com/vinisaveg/milkway/pulls',
+                },
+            },
+        },
+    },
 };
