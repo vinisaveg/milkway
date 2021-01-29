@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 export const FeaturesWrapper = styled.div`
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: flex-start;
 
     background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 8px 0px 0px 0px;
 
     padding: 80px 0px 80px 80px;
+    margin-left: 250px;
 
     box-sizing: border-box;
 `;

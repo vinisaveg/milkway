@@ -19,7 +19,7 @@ export const SideWrapper = styled.div`
 
 export const Title = styled.h2`
     max-width: 600px;
-    font-size: 82px;
+    font-size: 74px;
     font-weight: bold;
     color: ${(props) => props.theme.colors.text.light};
     margin-bottom: 50px;
