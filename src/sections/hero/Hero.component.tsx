@@ -20,6 +20,7 @@ import {
 import homepageContent from '../../content/homepage';
 
 import heroImage from '../../assets/images/hero-img.png';
+import Features from '../../components/features/Features.component';
 
 const Hero: FunctionComponent = () => {
     return (
@@ -45,6 +46,8 @@ const Hero: FunctionComponent = () => {
                     />
                 </SideWrapper>
             </HeroWrapper>
+
+            <Features />
 
             <BackgroundLayer>
                 <Glass />
