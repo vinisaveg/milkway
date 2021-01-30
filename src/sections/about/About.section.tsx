@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {
     AboutWrapper,
     SideWrapper,
+    ContentWrapper,
     Text,
     Title,
     AboutImage,
@@ -21,9 +22,11 @@ const About: FunctionComponent = () => {
     return (
         <AboutWrapper id="about">
             <SideWrapper>
-                <Title>{homepage.about.what.title}</Title>
+                <ContentWrapper>
+                    <Title>{homepage.about.what.title}</Title>
 
-                <Text>{homepage.about.what.text}</Text>
+                    <Text>{homepage.about.what.text}</Text>
+                </ContentWrapper>
 
                 <AboutImage
                     width="100%"
@@ -33,9 +36,11 @@ const About: FunctionComponent = () => {
             </SideWrapper>
 
             <SideWrapper>
-                <Title>{homepage.about.how.title}</Title>
+                <ContentWrapper>
+                    <Title>{homepage.about.how.title}</Title>
 
-                <Text>{homepage.about.how.text}</Text>
+                    <Text>{homepage.about.how.text}</Text>
+                </ContentWrapper>
 
                 <TipWrapper>
                     <AboutImage
