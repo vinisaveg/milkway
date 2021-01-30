@@ -11,4 +11,8 @@ export const Main = styled.main`
     padding: 50px 120px 0px 120px;
 
     box-sizing: border-box;
+
+    @media only screen and (max-width: 1200px) {
+        padding: 50px 60px 0px 60px;
+    }
 `;

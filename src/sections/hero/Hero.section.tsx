@@ -10,7 +10,6 @@ import {
     SubTitle,
     HeroImage,
     BackgroundLayer,
-    Glass,
 } from './hero.styles';
 import {
     Button,
@@ -49,9 +48,7 @@ const Hero: FunctionComponent = () => {
 
             <Features />
 
-            <BackgroundLayer>
-                <Glass />
-            </BackgroundLayer>
+            <BackgroundLayer>{/* <Glass /> */}</BackgroundLayer>
         </>
     );
 };

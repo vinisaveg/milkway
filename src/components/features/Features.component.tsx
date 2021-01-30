@@ -8,6 +8,9 @@ import {
     FeatureText,
 } from './features.styles';
 
+import ExploreIcon from '../../assets/icons/explore-icon.svg';
+import ShareIcon from '../../assets/icons/share-icon.svg';
+import FavoriteIcon from '../../assets/icons/favorite-icon.svg';
 import MiniMilkshakeIcon from '../../assets/icons/mini-milkshake-icon.svg';
 
 import homepageContent from '../../content/homepage';
@@ -17,7 +20,7 @@ const Features: FunctionComponent = () => {
         <FeaturesWrapper>
             <Feature>
                 <FeatureIcon>
-                    <MiniMilkshakeIcon />
+                    <ExploreIcon />
                 </FeatureIcon>
 
                 <FeatureTitle>
@@ -29,7 +32,7 @@ const Features: FunctionComponent = () => {
 
             <Feature>
                 <FeatureIcon>
-                    <MiniMilkshakeIcon />
+                    <ShareIcon />
                 </FeatureIcon>
 
                 <FeatureTitle>
@@ -43,7 +46,7 @@ const Features: FunctionComponent = () => {
 
             <Feature>
                 <FeatureIcon>
-                    <MiniMilkshakeIcon />
+                    <FavoriteIcon />
                 </FeatureIcon>
 
                 <FeatureTitle>
