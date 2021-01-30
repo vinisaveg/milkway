@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { ButtonWrapper } from '../../styles/shared/button/button.styles';
+
 export const Wrapper = styled.header`
     width: 100%;
     display: flex;
@@ -15,6 +17,10 @@ export const NavWrapper = styled.div`
 
     && a:last-child {
         margin-right: 0;
+    }
+
+    @media only screen and (max-width: 950px) {
+        display: none;
     }
 `;
 
@@ -32,6 +38,12 @@ export const NavLink = styled.a`
 
 export const Logo = styled.h1`
     font-family: ${(props) => props.theme.fonts.logo};
-    font-size: 42px;
+    font-size: 38px;
     color: ${(props) => props.theme.colors.text.light};
+`;
+
+export const RegisterButtonWrapper = styled(ButtonWrapper)`
+    @media only screen and (max-width: 950px) {
+        display: none;
+    }
 `;

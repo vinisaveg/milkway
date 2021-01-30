@@ -62,7 +62,6 @@ export const MilkshakesWrapper = styled.div`
 
 export const Milkshake = styled.div`
     width: 30%;
-    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,11 +1,14 @@
 import { FunctionComponent } from 'react';
 import Link from 'next/link';
 
-import { Wrapper, Logo, NavWrapper, NavLink } from './navbar.styles';
 import {
-    Button,
-    ButtonWrapper,
-} from '../../styles/shared/button/button.styles';
+    Wrapper,
+    Logo,
+    NavWrapper,
+    NavLink,
+    RegisterButtonWrapper,
+} from './navbar.styles';
+import { Button } from '../../styles/shared/button/button.styles';
 
 const Navbar: FunctionComponent = () => {
     return (
@@ -28,11 +31,11 @@ const Navbar: FunctionComponent = () => {
                 </Link>
             </NavWrapper>
 
-            <ButtonWrapper width="150px" color="primary">
+            <RegisterButtonWrapper width="150px" color="primary">
                 <Link href="/signup" passHref>
                     <Button color="primary">Register</Button>
                 </Link>
-            </ButtonWrapper>
+            </RegisterButtonWrapper>
         </Wrapper>
     );
 };
