@@ -11,7 +11,14 @@ export const FooterWrapper = styled.footer`
     box-sizing: border-box;
     background-color: ${(props) => props.theme.colors.darkBackground};
 
-    /* @media only screen and (max-width: 1250px) {} */
+    @media only screen and (max-width: 820px) {
+        flex-direction: column;
+        padding: 80px;
+    }
+
+    @media only screen and (max-width: 520px) {
+        padding: 80px 40px;
+    }
 `;
 
 export const SideWrapper = styled.div`
@@ -21,13 +28,22 @@ export const SideWrapper = styled.div`
     justify-content: center;
     flex-flow: column;
 
-    &&:last-child {
-        margin-left: 50px;
+    @media only screen and (max-width: 820px) {
+        width: 100%;
+        justify-content: flex-start;
     }
 `;
 
 export const LinksSideWrapper = styled(SideWrapper)`
     flex-flow: row;
+    justify-content: center;
+    box-sizing: border-box;
+
+    @media only screen and (max-width: 820px) {
+        margin-top: 30px;
+        width: 100%;
+        justify-content: flex-start;
+    }
 `;
 
 export const Logo = styled.h1`
@@ -50,11 +66,41 @@ export const SimpleLink = styled.a`
 export const LinksWrapper = styled.div`
     display: flex;
     flex-flow: column;
-    width: 120px;
+    width: 100px;
     margin-right: 50px;
 
     &&:last-child {
         margin: 0;
+    }
+
+    @media only screen and (max-width: 1150px) {
+        flex-direction: column;
+
+        &&:nth-child(2) {
+            margin: 30px 0px 0px 0px;
+        }
+
+        &&:nth-child(4) {
+            margin: 30px 0px 0px 0px;
+        }
+    }
+`;
+
+export const DoubleLinksWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+
+    &&:last-child {
+        margin-left: 30px;
+    }
+
+    @media only screen and (max-width: 1150px) {
+        flex-direction: column;
+
+        &&:last-child {
+            margin: 0;
+            justify-content: flex-start;
+        }
     }
 `;
 
