@@ -19,6 +19,10 @@ export const SideWrapper = styled.div`
     &&:last-child {
         margin-left: 50px;
     }
+
+    @media only screen and (max-width: 520px) {
+        padding: 0px 0px 0px 40px;
+    }
 `;
 
 export const Title = styled.h2`
