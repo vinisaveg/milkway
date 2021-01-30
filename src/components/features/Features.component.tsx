@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 
 import {
     FeaturesWrapper,
+    DoubleFeatureWrapper,
     Feature,
     FeatureIcon,
     FeatureTitle,
@@ -18,57 +19,65 @@ import homepageContent from '../../content/homepage';
 const Features: FunctionComponent = () => {
     return (
         <FeaturesWrapper>
-            <Feature>
-                <FeatureIcon>
-                    <ExploreIcon />
-                </FeatureIcon>
+            <DoubleFeatureWrapper>
+                <Feature>
+                    <FeatureIcon>
+                        <ExploreIcon />
+                    </FeatureIcon>
 
-                <FeatureTitle>
-                    {homepageContent.features.first.title}
-                </FeatureTitle>
+                    <FeatureTitle>
+                        {homepageContent.features.first.title}
+                    </FeatureTitle>
 
-                <FeatureText>{homepageContent.features.first.text}</FeatureText>
-            </Feature>
+                    <FeatureText>
+                        {homepageContent.features.first.text}
+                    </FeatureText>
+                </Feature>
 
-            <Feature>
-                <FeatureIcon>
-                    <ShareIcon />
-                </FeatureIcon>
+                <Feature>
+                    <FeatureIcon>
+                        <ShareIcon />
+                    </FeatureIcon>
 
-                <FeatureTitle>
-                    {homepageContent.features.second.title}
-                </FeatureTitle>
+                    <FeatureTitle>
+                        {homepageContent.features.second.title}
+                    </FeatureTitle>
 
-                <FeatureText>
-                    {homepageContent.features.second.text}
-                </FeatureText>
-            </Feature>
+                    <FeatureText>
+                        {homepageContent.features.second.text}
+                    </FeatureText>
+                </Feature>
+            </DoubleFeatureWrapper>
 
-            <Feature>
-                <FeatureIcon>
-                    <FavoriteIcon />
-                </FeatureIcon>
+            <DoubleFeatureWrapper>
+                <Feature>
+                    <FeatureIcon>
+                        <FavoriteIcon />
+                    </FeatureIcon>
 
-                <FeatureTitle>
-                    {homepageContent.features.third.title}
-                </FeatureTitle>
+                    <FeatureTitle>
+                        {homepageContent.features.third.title}
+                    </FeatureTitle>
 
-                <FeatureText>{homepageContent.features.third.text}</FeatureText>
-            </Feature>
+                    <FeatureText>
+                        {homepageContent.features.third.text}
+                    </FeatureText>
+                </Feature>
 
-            <Feature>
-                <FeatureIcon>
-                    <MiniMilkshakeIcon />
-                </FeatureIcon>
+                <Feature>
+                    <FeatureIcon>
+                        <MiniMilkshakeIcon />
+                    </FeatureIcon>
 
-                <FeatureTitle>
-                    {homepageContent.features.fourth.title}
-                </FeatureTitle>
+                    <FeatureTitle>
+                        {homepageContent.features.fourth.title}
+                    </FeatureTitle>
 
-                <FeatureText>
-                    {homepageContent.features.fourth.text}
-                </FeatureText>
-            </Feature>
+                    <FeatureText>
+                        {homepageContent.features.fourth.text}
+                    </FeatureText>
+                </Feature>
+            </DoubleFeatureWrapper>
         </FeaturesWrapper>
     );
 };

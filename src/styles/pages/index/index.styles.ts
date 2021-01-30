@@ -15,4 +15,12 @@ export const Main = styled.main`
     @media only screen and (max-width: 1200px) {
         padding: 50px 60px 0px 60px;
     }
+
+    @media only screen and (max-width: 620px) {
+        padding: 50px 30px 0px 30px;
+    }
+
+    @media only screen and (max-width: 520px) {
+        padding: 50px 0px 0px 0px;
+    }
 `;
