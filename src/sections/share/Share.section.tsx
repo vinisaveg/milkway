@@ -44,8 +44,6 @@ const Share: FunctionComponent = () => {
                     <Milkshake>
                         <MilkshakeIcon3 />
                     </Milkshake>
-                </MilkshakesWrapper>
-                <MilkshakesWrapper>
                     <Milkshake>
                         <MilkshakeIcon4 />
                     </Milkshake>

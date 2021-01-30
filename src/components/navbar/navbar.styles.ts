@@ -40,6 +40,10 @@ export const Logo = styled.h1`
     font-family: ${(props) => props.theme.fonts.logo};
     font-size: 38px;
     color: ${(props) => props.theme.colors.text.light};
+
+    @media only screen and (max-width: 520px) {
+        margin-left: 40px;
+    }
 `;
 
 export const RegisterButtonWrapper = styled(ButtonWrapper)`
