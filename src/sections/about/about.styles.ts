@@ -22,7 +22,6 @@ export const AboutWrapper = styled.section`
 
 export const SideWrapper = styled.div`
     width: 50%;
-    /* position: relative; */
     display: flex;
     justify-content: center;
     flex-flow: column;
@@ -33,7 +32,6 @@ export const SideWrapper = styled.div`
 
     @media only screen and (max-width: 935px) {
         width: 100%;
-        flex-flow: row;
         margin-bottom: 30px;
 
         &&:last-child {
@@ -92,10 +90,10 @@ export const AboutImage = styled.img<AboutImageProps>`
         max-width: auto;
     }
 
-    @media only screen and (max-width: 935px) {
+    /* @media only screen and (max-width: 935px) {
         width: 300px;
         height: 300px;
-    }
+    } */
 
     @media only screen and (max-width: 860px) {
         width: 100%;
