@@ -30,7 +30,7 @@ html, body {
     overflow-x: hidden;
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
 }
 
