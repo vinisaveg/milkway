@@ -1,5 +1,14 @@
 import styled, { keyframes } from 'styled-components';
 
+import { Button } from '../../shared/button/button.styles';
+
+export const FormButtonAsButton = Button.withComponent('button');
+
+export const FormButton = styled(FormButtonAsButton)`
+    border: none;
+    outline: none;
+`;
+
 export const PageWrapper = styled.div``;
 
 export const FormWrapper = styled.div`
@@ -61,7 +70,6 @@ export const InputLabel = styled.label`
     color: ${(props) => props.theme.colors.text.dark};
     margin-bottom: 15px;
     display: inline-block;
-    /* font-weight: bold; */
 `;
 
 export const Input = styled.input`

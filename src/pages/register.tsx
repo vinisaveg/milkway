@@ -12,8 +12,9 @@ import {
     Input,
     OptionSpan,
     RegisterLink,
+    FormButton,
 } from '../styles/pages/signinRegister/signInRegister.styles';
-import { ButtonWrapper, Button } from '../styles/shared/button/button.styles';
+import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
 export const Register: FunctionComponent = () => {
     return (
@@ -43,7 +44,9 @@ export const Register: FunctionComponent = () => {
                         width="100%"
                         color="primary"
                     >
-                        <Button color="primary">Register</Button>
+                        <FormButton type="submit" color="primary">
+                            Register
+                        </FormButton>
                     </ButtonWrapper>
 
                     <OptionSpan>

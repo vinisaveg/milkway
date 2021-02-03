@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
 import {
     PageWrapper,
@@ -14,36 +16,57 @@ import {
     ForgotPassword,
     OptionSpan,
     RegisterLink,
+    FormButton,
 } from '../styles/pages/signinRegister/signInRegister.styles';
-import { ButtonWrapper, Button } from '../styles/shared/button/button.styles';
+import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
 const SignIn: FunctionComponent = () => {
+    const formik = useFormik({
+        initialValues: {
+            nickname: '',
+            password: '',
+        },
+        onSubmit: (values) => console.log(values),
+    });
+
     return (
         <PageWrapper>
             <FormWrapper>
-                <Form>
+                <Form onSubmit={formik.handleSubmit}>
                     <Title>Sign in to your account</Title>
 
-                    <InputLabel>Nickname</InputLabel>
+                    <InputLabel htmlFor="nickname">Nickname</InputLabel>
 
-                    <Input type="text" />
+                    <Input
+                        type="text"
+                        id="nickname"
+                        onChange={formik.handleChange}
+                        value={formik.values.nickname}
+                    />
 
                     <InputLabelWrapper>
-                        <InputLabel>Password</InputLabel>
+                        <InputLabel htmlFor="password">Password</InputLabel>
 
                         <Link href="/recoverpass" passHref>
                             <ForgotPassword>Forgot password?</ForgotPassword>
                         </Link>
                     </InputLabelWrapper>
 
-                    <Input type="password" />
+                    <Input
+                        type="password"
+                        id="password"
+                        onChange={formik.handleChange}
+                        value={formik.values.password}
+                    />
 
                     <ButtonWrapper
                         margin={['0px', '0px', '30px', '0px']}
                         width="100%"
                         color="primary"
                     >
-                        <Button color="primary">Sign In</Button>
+                        <FormButton type="submit" color="primary">
+                            Sign In
+                        </FormButton>
                     </ButtonWrapper>
 
                     <OptionSpan>
