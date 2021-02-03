@@ -1,10 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 
-export const PageWrapper = styled.div`
-    display: flex;
-`;
+export const PageWrapper = styled.div``;
 
-export const SignInWrapper = styled.div`
+export const FormWrapper = styled.div`
     width: 60%;
     height: 100vh;
     max-height: 100vh;
@@ -63,6 +61,7 @@ export const InputLabel = styled.label`
     color: ${(props) => props.theme.colors.text.dark};
     margin-bottom: 15px;
     display: inline-block;
+    /* font-weight: bold; */
 `;
 
 export const Input = styled.input`
@@ -88,7 +87,7 @@ export const Input = styled.input`
     }
 `;
 
-export const RegisterSpan = styled.span`
+export const OptionSpan = styled.span`
     display: inline-block;
     color: ${(props) => props.theme.colors.text.dark};
     margin-right: 2px;

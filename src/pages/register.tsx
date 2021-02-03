@@ -8,48 +8,48 @@ import {
     Logo,
     Form,
     Title,
-    InputLabelWrapper,
     InputLabel,
     Input,
-    ForgotPassword,
     OptionSpan,
     RegisterLink,
 } from '../styles/pages/signinRegister/signInRegister.styles';
 import { ButtonWrapper, Button } from '../styles/shared/button/button.styles';
 
-const SignIn: FunctionComponent = () => {
+export const Register: FunctionComponent = () => {
     return (
         <PageWrapper>
             <FormWrapper>
                 <Form>
-                    <Title>Sign in to your account</Title>
+                    <Title>Register an account</Title>
 
                     <InputLabel>Nickname</InputLabel>
 
-                    <Input type="text" />
+                    <Input type="text" placeholder="Choose a nickname" />
 
-                    <InputLabelWrapper>
-                        <InputLabel>Password</InputLabel>
+                    <InputLabel>E-mail</InputLabel>
 
-                        <Link href="/recoverpass" passHref>
-                            <ForgotPassword>Forgot password?</ForgotPassword>
-                        </Link>
-                    </InputLabelWrapper>
+                    <Input type="text" placeholder="Your best e-mail here" />
 
-                    <Input type="password" />
+                    <InputLabel>Password</InputLabel>
+
+                    <Input type="password" placeholder="Make sure it's safe" />
+
+                    <InputLabel>Confirm password</InputLabel>
+
+                    <Input type="password" placeholder="And easy to remember" />
 
                     <ButtonWrapper
                         margin={['0px', '0px', '30px', '0px']}
                         width="100%"
                         color="primary"
                     >
-                        <Button color="primary">Sign In</Button>
+                        <Button color="primary">Register</Button>
                     </ButtonWrapper>
 
                     <OptionSpan>
-                        Don't have an account?{' '}
-                        <Link href="/register" passHref>
-                            <RegisterLink>Register here</RegisterLink>
+                        Already have an account?{' '}
+                        <Link href="/signin" passHref>
+                            <RegisterLink>Sign in here</RegisterLink>
                         </Link>
                     </OptionSpan>
                 </Form>
@@ -62,4 +62,4 @@ const SignIn: FunctionComponent = () => {
     );
 };
 
-export default SignIn;
+export default Register;
