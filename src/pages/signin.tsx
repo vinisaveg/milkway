@@ -18,6 +18,7 @@ import {
     OptionSpan,
     RegisterLink,
     FormButton,
+    ErrorLabel,
 } from '../styles/pages/signinRegister/signInRegister.styles';
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
@@ -27,6 +28,7 @@ const SignIn: FunctionComponent = () => {
             nickname: '',
             password: '',
         },
+        validateOnChange: false,
         validationSchema: signInSchema,
         onSubmit: (values) => console.log(values),
     });
@@ -36,10 +38,10 @@ const SignIn: FunctionComponent = () => {
             <FormWrapper>
                 <Form onSubmit={formik.handleSubmit}>
                     {formik.errors.nickname ? (
-                        <div style={{ marginBottom: '30px', color: 'red' }}>
-                            {formik.errors.nickname}
-                        </div>
-                    ) : null}
+                        <ErrorLabel>{formik.errors.nickname}</ErrorLabel>
+                    ) : (
+                        <ErrorLabel>{formik.errors.password}</ErrorLabel>
+                    )}
 
                     <Title>Sign in to your account</Title>
 

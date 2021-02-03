@@ -9,6 +9,15 @@ export const FormButton = styled(FormButtonAsButton)`
     outline: none;
 `;
 
+export const ErrorLabel = styled.label`
+    width: 100%;
+    min-height: 20px;
+    color: ${(props) => props.theme.colors.red};
+    font-size: 14px;
+    display: block;
+    margin-bottom: 20px;
+`;
+
 export const PageWrapper = styled.div``;
 
 export const FormWrapper = styled.div`
