@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+
+import { signInSchema } from '../utils/validation/signIn.schema';
 
 import {
     PageWrapper,
@@ -26,6 +27,7 @@ const SignIn: FunctionComponent = () => {
             nickname: '',
             password: '',
         },
+        validationSchema: signInSchema,
         onSubmit: (values) => console.log(values),
     });
 
@@ -33,6 +35,12 @@ const SignIn: FunctionComponent = () => {
         <PageWrapper>
             <FormWrapper>
                 <Form onSubmit={formik.handleSubmit}>
+                    {formik.errors.nickname ? (
+                        <div style={{ marginBottom: '30px', color: 'red' }}>
+                            {formik.errors.nickname}
+                        </div>
+                    ) : null}
+
                     <Title>Sign in to your account</Title>
 
                     <InputLabel htmlFor="nickname">Nickname</InputLabel>
