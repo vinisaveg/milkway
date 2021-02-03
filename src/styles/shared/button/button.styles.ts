@@ -3,6 +3,7 @@ import styled from 'styled-components';
 interface ButtonProps {
     width?: string;
     color?: 'primary' | 'secondary' | 'transparent' | 'red' | 'green';
+    margin?: Array<string>;
 }
 
 export const ButtonWrapper = styled.div<ButtonProps>`
@@ -11,6 +12,7 @@ export const ButtonWrapper = styled.div<ButtonProps>`
     border-radius: 11px;
     border: 1px solid;
     border-color: ${(props) => props.theme.colors[props.color]};
+    margin: ${(props) => props.margin?.join(' ')};
 `;
 
 export const Button = styled.a<ButtonProps>`
