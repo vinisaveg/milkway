@@ -2,8 +2,10 @@ import { FunctionComponent } from 'react';
 
 import { request } from 'graphql-request';
 import useSWR from 'swr';
+import { signInMutation } from '../graphql/mutations/signIn.mutation';
 
-// import { environment } from '../config/environment';
+import { environment } from '../config/environment';
+import { RequestDocument } from 'graphql-request/dist/types';
 
 interface Data {
     characters: {
@@ -11,38 +13,22 @@ interface Data {
     };
 }
 
-const fetcher = (query) =>
-    request('https://rickandmortyapi.com/graphql', query);
+const fetcher = (mutation: RequestDocument) =>
+    request(environment.baseURL, mutation);
 
 const SignIn: FunctionComponent = () => {
-    const { data, error } = useSWR<Data>(
-        `
-    {
-        characters {
-          results {
-            id
-            name
-          }
-        }
-      }
-    `,
-        fetcher
-    );
+    const { data, error } = useSWR(signInMutation, fetcher);
 
     if (error) {
         return <span>Something went bad</span>;
     }
 
     if (data) {
-        console.log(data.characters);
+        console.log(data);
 
         return (
             <div>
                 <span>Sign In </span>
-
-                {data.characters.results.map((character) => (
-                    <span key={character.id}>{character.name}</span>
-                ))}
             </div>
         );
     }
