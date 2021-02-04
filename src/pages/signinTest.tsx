@@ -1,22 +1,28 @@
 import { FunctionComponent } from 'react';
+import { useRouter } from 'next/router';
 
-import { request } from 'graphql-request';
+import { GraphQLClient } from 'graphql-request';
+import { RequestDocument } from 'graphql-request/dist/types';
 import useSWR from 'swr';
+
 import { signInMutation } from '../graphql/mutations/signIn.mutation';
 
 import { environment } from '../config/environment';
-import { RequestDocument } from 'graphql-request/dist/types';
 
-interface Data {
-    characters: {
-        results: [{ id: string; name: string }];
-    };
-}
+const gqlClient = new GraphQLClient(environment.baseURL, {
+    credentials: 'include',
+});
 
-const fetcher = (mutation: RequestDocument) =>
-    request(environment.baseURL, mutation);
+// interface Data {
+//     characters: {
+//         results: [{ id: string; name: string }];
+//     };
+// }
+
+const fetcher = (mutation: RequestDocument) => gqlClient.request(mutation);
 
 const SignIn: FunctionComponent = () => {
+    const router = useRouter();
     const { data, error } = useSWR(signInMutation, fetcher);
 
     if (error) {
@@ -25,6 +31,7 @@ const SignIn: FunctionComponent = () => {
 
     if (data) {
         console.log(data);
+        router.push('/home');
 
         return (
             <div>
