@@ -5,7 +5,7 @@ import { GraphQLClient } from 'graphql-request';
 import { RequestDocument } from 'graphql-request/dist/types';
 import useSWR from 'swr';
 
-import { signInMutation } from '../graphql/mutations/signIn.mutation';
+import { signInMutation } from '../graphql/mutations/user/signIn.mutation';
 
 import { environment } from '../config/environment';
 
@@ -19,7 +19,11 @@ const gqlClient = new GraphQLClient(environment.baseURL, {
 //     };
 // }
 
-const fetcher = (mutation: RequestDocument) => gqlClient.request(mutation);
+const fetcher = (mutation: RequestDocument) =>
+    gqlClient.request(mutation, {
+        nickname: 'vineras',
+        password: '12345678',
+    });
 
 const SignIn: FunctionComponent = () => {
     const router = useRouter();

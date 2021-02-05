@@ -1,8 +1,8 @@
 import { gql } from 'graphql-request';
 
 export const signInMutation = gql`
-    mutation {
-        signInUser(data: { nickname: "vineras", password: "12345678" }) {
+    mutation SignIn($nickname: String!, $password: String!){
+        signInUser(data: { nickname: $nickname:, password: $password }) {
             user {
                 id
                 nickname

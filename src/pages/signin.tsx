@@ -1,8 +1,16 @@
-import Link from 'next/link';
 import { FunctionComponent } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
+import { RequestDocument } from 'graphql-request/dist/types';
+import useSWR from 'swr';
 
 import { signInSchema } from '../utils/validation/signIn.schema';
+
+import { graphqlClient } from '../config/graphqlClient';
+import { signInMutation } from '../graphql/mutations/user/signIn.mutation';
+
+// import { useSignIn } from '../hooks/auth/useSignIn';
 
 import {
     PageWrapper,
@@ -23,6 +31,8 @@ import {
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
 const SignIn: FunctionComponent = () => {
+    const router = useRouter();
+
     const formik = useFormik({
         initialValues: {
             nickname: '',
@@ -30,8 +40,23 @@ const SignIn: FunctionComponent = () => {
         },
         validateOnChange: false,
         validationSchema: signInSchema,
-        onSubmit: (values) => console.log(values),
+        onSubmit: (values) => handleSignIn(),
     });
+
+    const handleSignIn = () => {
+        router.push({
+            pathname: '/auth',
+            query: {
+                nickname: formik.values.nickname,
+                password: formik.values.password,
+            },
+        });
+        // const [data, error] = useSignIn(
+        //     formik.values.nickname,
+        //     formik.values.password
+        // );
+        // console.log(data, error);
+    };
 
     return (
         <PageWrapper>

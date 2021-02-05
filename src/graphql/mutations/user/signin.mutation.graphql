@@ -1,0 +1,14 @@
+mutation SignInUser($nickname: String!, $password: String!) {
+    signInUser(data: { nickname: $nickname, password: $password }) {
+        user {
+            id
+            nickname
+            password
+        }
+        success
+        error {
+            message
+            field
+        }
+    }
+}
