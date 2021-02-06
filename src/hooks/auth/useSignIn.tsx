@@ -6,19 +6,24 @@ import { signInMutation } from '../../graphql/mutations/user/signIn.mutation';
 interface hookResponse {
     nickname: string;
     password: string;
+    isSubmited: boolean;
 }
 
 export const useSignIn = (
     nickname: string,
-    password: string
-): Array<hookResponse> => {
+    password: string,
+    isSubmited: boolean
+) => {
     const fetcher = (mutation: RequestDocument) =>
         graphqlClient.request(mutation, {
             nickname: nickname,
             password: password,
         });
 
-    const { data, error } = useSWR(signInMutation, fetcher);
+    const { data, error, mutate } = useSWR(
+        isSubmited ? signInMutation : null,
+        fetcher
+    );
 
-    return [data, error];
+    return [data, error, mutate];
 };
