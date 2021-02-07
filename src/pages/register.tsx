@@ -1,9 +1,11 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
+import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { useFormik } from 'formik';
-
 import { registerSchema } from '../utils/validation/register.schema';
+
+import { useRegister } from '../hooks/auth/useRegister';
 
 import {
     PageWrapper,
@@ -22,21 +24,47 @@ import {
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
 export const Register: FunctionComponent = () => {
+    const [responseError, setResponseError] = useState<string>('');
+    const [isSubmitted, setIsSubmited] = useState<boolean>(false);
+    const router = useRouter();
+
     const formik = useFormik({
         initialValues: {
+            name: '',
             nickname: '',
             email: '',
             password: '',
             confirmPassword: '',
         },
         validateOnChange: false,
-        validateOnBlur: true,
         validationSchema: registerSchema,
-        onSubmit: (values) => submitRegister(),
+        onSubmit: (values) => handleRegister(),
     });
 
-    const submitRegister = () => {
-        console.log(formik.values);
+    const { mutate } = useRegister(
+        formik.values.name,
+        formik.values.nickname,
+        formik.values.email,
+        formik.values.password,
+        isSubmitted
+    );
+
+    const handleRegister = async () => {
+        setIsSubmited(true);
+
+        const response = await mutate();
+
+        if (response.registerUser.error) {
+            setResponseError(response.registerUser.error.message);
+            setIsSubmited(false);
+        } else {
+            setResponseError('');
+            setIsSubmited(false);
+
+            router.push({
+                pathname: '/home',
+            });
+        }
     };
 
     return (
@@ -47,7 +75,21 @@ export const Register: FunctionComponent = () => {
                         {Object.values(formik.errors).find((error) => error)}
                     </ErrorLabel>
 
+                    {responseError ? (
+                        <ErrorLabel>{responseError}</ErrorLabel>
+                    ) : null}
+
                     <Title>Register an account</Title>
+
+                    <InputLabel htmlFor="name">Name</InputLabel>
+
+                    <Input
+                        type="text"
+                        placeholder="What's your name?"
+                        id="name"
+                        onChange={formik.handleChange}
+                        value={formik.values.name}
+                    />
 
                     <InputLabel htmlFor="nickname">Nickname</InputLabel>
 
