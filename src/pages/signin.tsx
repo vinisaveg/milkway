@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { FunctionComponent, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useFormik } from 'formik';
+import { FunctionComponent, useState } from 'react';
 
 import { signInSchema } from '../utils/validation/signIn.schema';
 
@@ -25,12 +25,6 @@ import {
 } from '../styles/pages/signinRegister/signInRegister.styles';
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
-interface SignInResponse {
-    user?: { id: string; nickname: string };
-    success?: boolean;
-    error?: { message: string; field: string };
-}
-
 const SignIn: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
     const [isSubmited, setIsSubmited] = useState<boolean>(false);
@@ -46,7 +40,7 @@ const SignIn: FunctionComponent = () => {
         onSubmit: (values) => handleSignIn(),
     });
 
-    let { data, error, mutate } = useSignIn(
+    const { mutate } = useSignIn(
         formik.values.nickname,
         formik.values.password,
         isSubmited

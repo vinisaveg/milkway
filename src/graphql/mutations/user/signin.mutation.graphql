@@ -3,7 +3,6 @@ mutation SignInUser($nickname: String!, $password: String!) {
         user {
             id
             nickname
-            password
         }
         success
         error {

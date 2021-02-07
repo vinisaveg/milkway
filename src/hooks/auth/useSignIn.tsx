@@ -1,16 +1,11 @@
 import { RequestDocument } from 'graphql-request/dist/types';
-import useSWR from 'swr';
 import { mutateCallback } from 'swr/dist/types';
+import useSWR from 'swr';
+
 import { graphqlClient } from '../../config/graphqlClient';
 import { signInMutation } from '../../graphql/mutations/user/signIn.mutation';
 
-interface SignInResponse {
-    signInUser: {
-        user?: { id: string; nickname: string };
-        success?: boolean;
-        error?: { message: string; field: string };
-    };
-}
+import { SignInResponse } from '../../types/auth/SignInResponse.type';
 
 interface HookResponse {
     data: SignInResponse;
