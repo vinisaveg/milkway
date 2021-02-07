@@ -25,8 +25,15 @@ import {
 } from '../styles/pages/signinRegister/signInRegister.styles';
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
+interface SignInResponse {
+    user?: { id: string; nickname: string };
+    success?: boolean;
+    error?: { message: string; field: string };
+}
+
 const SignIn: FunctionComponent = () => {
-    const [isSubmited, setIsSubmited] = useState(false);
+    const [responseError, setResponseError] = useState<string>('');
+    const [isSubmited, setIsSubmited] = useState<boolean>(false);
     const router = useRouter();
 
     const formik = useFormik({
@@ -39,20 +46,28 @@ const SignIn: FunctionComponent = () => {
         onSubmit: (values) => handleSignIn(),
     });
 
-    const [data, error, mutate] = useSignIn(
+    let { data, error, mutate } = useSignIn(
         formik.values.nickname,
         formik.values.password,
         isSubmited
     );
 
-    const handleSignIn = () => {
+    const handleSignIn = async () => {
         setIsSubmited(true);
 
-        // mutate(data, true)
+        const response = await mutate();
 
-        // router.push({
-        //     pathname: '/home',
-        // });
+        if (response.signInUser.error) {
+            setResponseError(response.signInUser.error.message);
+            setIsSubmited(false);
+        } else {
+            setResponseError('');
+            setIsSubmited(false);
+
+            router.push({
+                pathname: '/home',
+            });
+        }
     };
 
     return (
@@ -64,6 +79,10 @@ const SignIn: FunctionComponent = () => {
                     ) : (
                         <ErrorLabel>{formik.errors.password}</ErrorLabel>
                     )}
+
+                    {responseError ? (
+                        <ErrorLabel>{responseError}</ErrorLabel>
+                    ) : null}
 
                     <Title>Sign in to your account</Title>
 
