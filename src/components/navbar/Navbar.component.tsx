@@ -16,7 +16,7 @@ const Navbar: FunctionComponent = () => {
             <Logo>milkway</Logo>
 
             <NavWrapper>
-                <Link href="/" passHref>
+                <Link href="/home" passHref>
                     <NavLink>home</NavLink>
                 </Link>
 
