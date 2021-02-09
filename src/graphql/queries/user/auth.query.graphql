@@ -1,0 +1,6 @@
+{
+    authUser {
+        id
+        nickname
+    }
+}
