@@ -32,7 +32,7 @@ const Hero: FunctionComponent = () => {
                     <SubTitle>{homepageContent.hero.subTitle}</SubTitle>
 
                     <ButtonWrapper width="150px" color="transparent">
-                        <Link href="/signup" passHref>
+                        <Link href="/register" passHref>
                             <Button color="transparent">Start now!</Button>
                         </Link>
                     </ButtonWrapper>

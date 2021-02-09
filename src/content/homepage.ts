@@ -51,8 +51,8 @@ export default {
                     url: '/signin',
                 },
                 link2: {
-                    name: 'Sign up',
-                    url: '/signup',
+                    name: 'Register',
+                    url: '/register',
                 },
                 link3: {
                     name: 'Help',
@@ -71,7 +71,7 @@ export default {
                 },
                 link2: {
                     name: 'Project',
-                    url: '/project',
+                    url: 'https://github.com/vinisaveg/milkway',
                 },
             },
             third: {

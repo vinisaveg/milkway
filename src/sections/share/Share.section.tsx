@@ -28,7 +28,7 @@ const Share: FunctionComponent = () => {
 
                 <Text>{homepage.share.text}</Text>
 
-                <Link href="/share" passHref>
+                <Link href="/home" passHref>
                     <ShareLink>Share now</ShareLink>
                 </Link>
             </SideWrapper>

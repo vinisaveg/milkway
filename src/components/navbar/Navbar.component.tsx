@@ -32,7 +32,7 @@ const Navbar: FunctionComponent = () => {
             </NavWrapper>
 
             <RegisterButtonWrapper width="150px" color="primary">
-                <Link href="/signup" passHref>
+                <Link href="/register" passHref>
                     <Button color="primary">Register</Button>
                 </Link>
             </RegisterButtonWrapper>
