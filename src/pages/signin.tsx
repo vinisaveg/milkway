@@ -5,7 +5,9 @@ import { FunctionComponent, useState } from 'react';
 
 import { signInSchema } from '../utils/validation/signIn.schema';
 
-import { useSignIn } from '../hooks/auth/useSignIn';
+import { graphqlClient } from '../config/graphqlClient';
+import { signInMutation } from '../graphql/mutations/user/signIn.mutation';
+import { SignInResponse } from '../types/auth/SignInResponse.type';
 
 import {
     PageWrapper,
@@ -27,7 +29,6 @@ import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
 const SignIn: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
-    const [isSubmited, setIsSubmited] = useState<boolean>(false);
     const router = useRouter();
 
     const formik = useFormik({
@@ -37,26 +38,22 @@ const SignIn: FunctionComponent = () => {
         },
         validateOnChange: false,
         validationSchema: signInSchema,
-        onSubmit: (values) => handleSignIn(),
+        onSubmit: () => handleSignIn(),
     });
 
-    const { mutate } = useSignIn(
-        formik.values.nickname,
-        formik.values.password,
-        isSubmited
-    );
-
     const handleSignIn = async () => {
-        setIsSubmited(true);
-
-        const response = await mutate();
+        const response = await graphqlClient.request<SignInResponse>(
+            signInMutation,
+            {
+                nickname: formik.values.nickname,
+                password: formik.values.password,
+            }
+        );
 
         if (response.signInUser.error) {
             setResponseError(response.signInUser.error.message);
-            setIsSubmited(false);
         } else {
             setResponseError('');
-            setIsSubmited(false);
 
             router.push({
                 pathname: '/home',
