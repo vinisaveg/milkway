@@ -1,25 +1,26 @@
 import { useRouter } from 'next/router';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent } from 'react';
+import { graphqlClient } from '../config/graphqlClient';
+
+import { logoutUserQuery } from '../graphql/queries/user/logout.query';
 
 import { useAuth } from '../hooks/auth/auth';
-import { useLogout } from '../hooks/auth/logout';
+import { LogoutResponse } from '../types/auth/LogoutResponse.type';
 
 const Home: FunctionComponent = () => {
-    const [isSubmited, setIsSubmited] = useState<boolean>(false);
     const router = useRouter();
     const { data, error } = useAuth();
-    const { mutate } = useLogout(isSubmited);
 
     const handleLogout = async () => {
-        setIsSubmited(true);
+        const response = await graphqlClient.request<LogoutResponse>(
+            logoutUserQuery
+        );
 
-        await mutate();
-
-        setIsSubmited(false);
-
-        router.push({
-            pathname: '/',
-        });
+        if (response.logoutUser) {
+            router.push({
+                pathname: '/',
+            });
+        }
     };
 
     if (!data) {
