@@ -5,8 +5,6 @@ import Link from 'next/link';
 
 import { registerSchema } from '../utils/validation/register.schema';
 
-import { useRegister } from '../hooks/auth/useRegister';
-
 import {
     PageWrapper,
     FormWrapper,
@@ -22,10 +20,12 @@ import {
     ErrorLabel,
 } from '../styles/pages/signinRegister/signInRegister.styles';
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
+import { graphqlClient } from '../config/graphqlClient';
+import { registerUserMutation } from '../graphql/mutations/user/register.mutation';
+import { RegisterResponse } from '../types/auth/RegisterResponse.type';
 
 export const Register: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
-    const [isSubmitted, setIsSubmited] = useState<boolean>(false);
     const router = useRouter();
 
     const formik = useFormik({
@@ -38,28 +38,24 @@ export const Register: FunctionComponent = () => {
         },
         validateOnChange: false,
         validationSchema: registerSchema,
-        onSubmit: (values) => handleRegister(),
+        onSubmit: () => handleRegister(),
     });
 
-    const { mutate } = useRegister(
-        formik.values.name,
-        formik.values.nickname,
-        formik.values.email,
-        formik.values.password,
-        isSubmitted
-    );
-
     const handleRegister = async () => {
-        setIsSubmited(true);
-
-        const response = await mutate();
+        const response = await graphqlClient.request<RegisterResponse>(
+            registerUserMutation,
+            {
+                name: formik.values.name,
+                email: formik.values.email,
+                nickname: formik.values.nickname,
+                password: formik.values.password,
+            }
+        );
 
         if (response.registerUser.error) {
             setResponseError(response.registerUser.error.message);
-            setIsSubmited(false);
         } else {
             setResponseError('');
-            setIsSubmited(false);
 
             router.push({
                 pathname: '/home',
