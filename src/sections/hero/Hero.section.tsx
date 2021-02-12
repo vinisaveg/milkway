@@ -1,6 +1,4 @@
 import { FunctionComponent } from 'react';
-
-import Navbar from '../../components/navbar/Navbar.component';
 import Link from 'next/link';
 
 import {
@@ -15,17 +13,16 @@ import {
     Button,
     ButtonWrapper,
 } from '../../styles/shared/button/button.styles';
+import Navbar from '../../components/navbar/Navbar.component';
+import Features from '../../components/features/Features.component';
 
 import homepageContent from '../../content/homepage';
 
 import heroImage from '../../assets/images/hero-img.png';
-import Features from '../../components/features/Features.component';
 
 const Hero: FunctionComponent = () => {
     return (
         <>
-            <Navbar />
-
             <HeroWrapper>
                 <SideWrapper>
                     <Title>{homepageContent.hero.title}</Title>

@@ -7,15 +7,14 @@ import Hero from '../sections/hero/Hero.section';
 import About from '../sections/about/About.section';
 import Share from '../sections/share/Share.section';
 import Footer from '../sections/footer/Footer.section';
+import Navbar from '../components/navbar/Navbar.component';
 
 const Index: FunctionComponent = () => {
     return (
         <>
-            <Head>
-                <title>milkway | Drink your way to the moon</title>
-            </Head>
-
             <Main>
+                <Navbar />
+
                 <Hero />
 
                 <About />

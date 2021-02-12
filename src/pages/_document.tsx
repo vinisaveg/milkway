@@ -61,6 +61,8 @@ export default class MyDocument extends Document {
                     />
 
                     <link rel="icon" href="" />
+
+                    <title>milkway | Drink your way to the moon</title>
                 </Head>
 
                 <body>
