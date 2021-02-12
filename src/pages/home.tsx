@@ -2,13 +2,15 @@ import { FunctionComponent } from 'react';
 
 import Navbar from '../components/navbar/Navbar.component';
 
-import { Main } from '../styles/pages/index/index.styles';
+import { GlobalWrapper, Main } from '../styles/shared/wrapper/wrapper.styles';
 
 const Home: FunctionComponent = () => {
     return (
-        <Main>
-            <Navbar />
-        </Main>
+        <GlobalWrapper backgroundColor="darkBlue">
+            <Main>
+                <Navbar />
+            </Main>
+        </GlobalWrapper>
     );
 };
 

@@ -1,7 +1,6 @@
 import { FunctionComponent } from 'react';
-import Head from 'next/head';
 
-import { Main } from '../styles/pages/index/index.styles';
+import { Main } from '../styles/shared/wrapper/wrapper.styles';
 
 import Hero from '../sections/hero/Hero.section';
 import About from '../sections/about/About.section';

@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+interface GlobalWrapperProps {
+    backgroundColor: 'background' | 'darkBackground' | 'darkBlue';
+}
+
+export const GlobalWrapper = styled.div<GlobalWrapperProps>`
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    background-color: ${(props) => props.theme.colors[props.backgroundColor]};
+`;
+
 export const Main = styled.main`
     max-width: 1600px;
 
