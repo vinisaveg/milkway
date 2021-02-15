@@ -106,9 +106,9 @@ export const BackgroundLayer = styled.div`
         width: 80%;
     }
 
-    @media only screen and (max-width: 835px) {
-        width: 95%;
-        height: 1200px;
+    @media only screen and (max-width: 990px) {
+        width: 99%;
+        height: 1600px;
     }
 
     @media only screen and (max-width: 750px) {
