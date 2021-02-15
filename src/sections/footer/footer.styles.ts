@@ -1,15 +1,21 @@
 import styled from 'styled-components';
 
+export const FooterOutsideLayer = styled.div`
+    width: 100%;
+    background-color: ${(props) => props.theme.colors.darkBackground};
+`;
+
 export const FooterWrapper = styled.footer`
     width: 100%;
+    max-width: 1600px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
     padding: 80px 120px 160px 120px;
+    margin: 0 auto;
 
     box-sizing: border-box;
-    background-color: ${(props) => props.theme.colors.darkBackground};
 
     @media only screen and (max-width: 820px) {
         flex-direction: column;
