@@ -9,6 +9,7 @@ export const BorderWrapper = styled.div`
     border: 1px solid ${(props) => props.theme.colors.secondary};
     border-radius: 8px;
     transition: all 0.22s ease-in;
+    margin-bottom: 160px;
 
     :hover {
         border-color: transparent;
@@ -21,7 +22,7 @@ export const BorderWrapper = styled.div`
 
 export const Wrapper = styled.div`
     width: 100%;
-    height: 300px;
+    height: 350px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,6 +54,8 @@ export const Text = styled.p`
     font-size: 20px;
     margin-bottom: 50px;
 `;
+
+export const MilkshakesWrapper = styled.div``;
 
 export const ExploreButtonWrapper = styled(ButtonWrapper)`
     @media only screen and (min-width: 520px) {

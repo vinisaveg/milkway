@@ -1,0 +1,12 @@
+{
+    findMilkshakes(limit: 6) {
+        id
+        userId
+        name
+        description
+        recipe
+        ingredients
+        iconColorA
+        iconColorB
+    }
+}
