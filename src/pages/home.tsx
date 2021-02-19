@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import Community from '../components/community/Community.component';
 
 import Navbar from '../components/navbar/Navbar.component';
 
@@ -9,6 +10,8 @@ const Home: FunctionComponent = () => {
         <GlobalWrapper backgroundColor="darkBlue">
             <Main>
                 <Navbar />
+
+                <Community />
             </Main>
         </GlobalWrapper>
     );
