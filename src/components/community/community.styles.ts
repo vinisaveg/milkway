@@ -18,6 +18,10 @@ export const BorderWrapper = styled.div`
             transform: translate(0px, 0px);
         }
     }
+
+    @media only screen and (max-width: 520px) {
+        border-color: transparent;
+    }
 `;
 
 export const Wrapper = styled.div`
@@ -33,6 +37,15 @@ export const Wrapper = styled.div`
     border-radius: 8px;
     background-color: #0e2c49;
     transition: all 0.2s ease-in-out;
+
+    @media only screen and (max-width: 520px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        transform: translate(0px, 0px);
+        height: auto;
+    }
 `;
 
 export const ContentWrapper = styled.div`
@@ -40,6 +53,12 @@ export const ContentWrapper = styled.div`
     padding: 50px 0px 50px 50px;
     display: flex;
     flex-flow: column;
+    overflow: hidden;
+
+    @media only screen and (max-width: 520px) {
+        overflow: visible;
+        padding: 50px 0px 50px 40px;
+    }
 `;
 
 export const Title = styled.h2`
@@ -55,7 +74,13 @@ export const Text = styled.p`
     margin-bottom: 50px;
 `;
 
-export const MilkshakesWrapper = styled.div``;
+export const MilkshakesWrapper = styled.div`
+    width: 1600px;
+`;
+
+export const MilkshakeIconWrapper = styled.div`
+    display: inline-block;
+`;
 
 export const ExploreButtonWrapper = styled(ButtonWrapper)`
     @media only screen and (min-width: 520px) {
@@ -77,6 +102,8 @@ export const ExploreButtonWrapper = styled(ButtonWrapper)`
             opacity: 0.8;
         }
     }
+
+    margin: 0 auto 50px auto;
 `;
 
 export const ExploreButton = styled(Button)`
