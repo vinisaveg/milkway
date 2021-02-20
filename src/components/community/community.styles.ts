@@ -56,7 +56,8 @@ export const ContentWrapper = styled.div`
     overflow: hidden;
 
     @media only screen and (max-width: 520px) {
-        overflow: visible;
+        width: 80%;
+        /* overflow: visible; */
         padding: 50px 0px 50px 40px;
     }
 `;
@@ -74,8 +75,19 @@ export const Text = styled.p`
     margin-bottom: 50px;
 `;
 
-export const MilkshakesWrapper = styled.div`
+interface MilkshakeWrapperProps {
+    position: number;
+}
+
+export const MilkshakesWrapper = styled.div<MilkshakeWrapperProps>`
     width: 1600px;
+    display: flex;
+
+    transition: all 0.2s ease-in-out;
+
+    @media only screen and (max-width: 520px) {
+        transform: ${(props) => `translateX(${props.position}px)`};
+    }
 `;
 
 export const MilkshakeIconWrapper = styled.div`

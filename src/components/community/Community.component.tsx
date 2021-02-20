@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useState } from 'react';
 import Link from 'next/link';
 
 import {
@@ -21,6 +21,11 @@ import { FindMilkshakesQuery } from '../../graphql/queries/milkshake/findMilksha
 import { FindMilkshakesResponse } from '../../types/milkshake/FindMilkshakesResponse.type';
 
 export const Community: FunctionComponent = () => {
+    const [
+        milkshakeWrapperPosition,
+        setMilkshakeWrapperPosition,
+    ] = useState<number>(0);
+
     const fetcher = (query: RequestDocument) =>
         graphqlClient.request(query, { limit: 6 });
 
@@ -28,6 +33,16 @@ export const Community: FunctionComponent = () => {
         FindMilkshakesQuery,
         fetcher
     );
+
+    const handleMilkshakeWrapperPosition = () => {
+        if (milkshakeWrapperPosition <= 0) {
+            setMilkshakeWrapperPosition(milkshakeWrapperPosition - 112);
+        }
+
+        if (milkshakeWrapperPosition <= -220) {
+            setMilkshakeWrapperPosition(0);
+        }
+    };
 
     return (
         <BorderWrapper>
@@ -40,7 +55,10 @@ export const Community: FunctionComponent = () => {
                         globe
                     </Text>
 
-                    <MilkshakesWrapper>
+                    <MilkshakesWrapper
+                        position={milkshakeWrapperPosition}
+                        onClick={handleMilkshakeWrapperPosition}
+                    >
                         {data?.findMilkshakes?.map((milkshake) => (
                             <MilkshakeIconWrapper key={milkshake.id}>
                                 <svg
