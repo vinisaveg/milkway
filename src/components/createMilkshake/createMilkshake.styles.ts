@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
+import { Button } from '../../styles/shared/button/button.styles';
+
+export const FormButtonAsButton = Button.withComponent('button');
+
+export const FormButton = styled(FormButtonAsButton)`
+    border: none;
+    outline: none;
+`;
+
 export const BorderWrapper = styled.div`
     width: 100%;
     border: 1px solid ${(props) => props.theme.colors.secondary};
@@ -120,6 +129,22 @@ export const TextArea = styled(InputTextArea)`
     min-height: 300px;
     max-height: 320px;
     height: 300px;
+
+    font-family: ${(props) => props.theme.fonts.primary};
 `;
 
 export const MilkshakeWrapper = styled(FormWrapper)``;
+
+export const IconWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 50px;
+`;
+
+export const ButtonsWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
