@@ -29,7 +29,7 @@ export const BorderWrapper = styled.div`
     }
 `;
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.form`
     width: 100%;
     min-height: 350px;
     padding: 50px;
@@ -79,8 +79,6 @@ export const FormWrapper = styled.div`
         width: 100%;
     }
 `;
-
-export const Form = styled.form``;
 
 export const ErrorLabel = styled.label`
     width: 100%;
