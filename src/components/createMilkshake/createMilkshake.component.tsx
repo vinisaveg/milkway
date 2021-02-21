@@ -1,5 +1,8 @@
 import { FunctionComponent, useState } from 'react';
 
+import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
+
 import {
     BorderWrapper,
     Wrapper,
@@ -16,10 +19,10 @@ import {
     FormButton,
 } from './createMilkshake.styles';
 import { ButtonWrapper } from '../../styles/shared/button/button.styles';
-import { useFormik } from 'formik';
 
 const CreateMilkshakeForm: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
+    const router = useRouter();
 
     const formik = useFormik({
         initialValues: {
@@ -27,8 +30,8 @@ const CreateMilkshakeForm: FunctionComponent = () => {
             description: '',
             ingredients: '',
             instructions: '',
-            iconColorA: '',
-            iconColorB: '',
+            iconColorA: '#FF78CE',
+            iconColorB: '#FF78CE',
         },
         validateOnChange: false,
         onSubmit: () => handleCreateMilkshake(),
@@ -137,11 +140,11 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                             />
                             <path
                                 d="M52.1926 109.9H19.7886C16.4584 109.9 13.6668 107.383 13.3223 104.071L7.42725 47.3804H64.5535L58.6585 104.071C58.3145 107.383 55.5228 109.9 52.1926 109.9Z"
-                                fill="#FF78CE"
+                                fill={formik.values.iconColorA}
                             />
                             <path
                                 d="M68.8874 37.6287H3.09312C1.89629 37.6287 0.926025 38.5989 0.926025 39.7958V45.2134C0.926025 46.4102 1.89629 47.3805 3.09312 47.3805H68.8874C70.0843 47.3805 71.0545 46.4102 71.0545 45.2134V39.7958C71.0545 38.5989 70.0843 37.6287 68.8874 37.6287Z"
-                                fill="#FF78CE"
+                                fill={formik.values.iconColorB}
                             />
                         </svg>
                     </IconWrapper>
