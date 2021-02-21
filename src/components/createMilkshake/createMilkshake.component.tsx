@@ -15,6 +15,9 @@ import {
     InputLabel,
     TextArea,
     IconColorPickerWrapper,
+    ColorPicker,
+    Color,
+    ColorInput,
     IconWrapper,
     ButtonsWrapper,
     FormButton,
@@ -36,8 +39,8 @@ const CreateMilkshakeForm: FunctionComponent = () => {
             description: '',
             ingredients: '',
             instructions: '',
-            iconColorA: '#FF78CE',
-            iconColorB: '#FF78CE',
+            iconColorA: '',
+            iconColorB: '',
         },
         validateOnChange: false,
         validationSchema: createMilkshakeSchema,
@@ -142,23 +145,42 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                     </Text>
 
                     <IconColorPickerWrapper>
-                        <input
-                            id="iconColorA"
-                            type="text"
-                            placeholder="iconColorA"
-                            onChange={formik.handleChange}
-                        />
+                        <ColorPicker>
+                            <Color color="#FF78CE" />
+                            <Color color="#04DEA8" />
+                            <Color color="#FFED4E" />
+                            <Color color="#FF4959" />
+                            <Color color="#6070FF" />
+                            <Color color="#0B2641" />
+
+                            <ColorInput
+                                id="iconColorA"
+                                type="text"
+                                placeholder="#FF78CE"
+                                onChange={formik.handleChange}
+                            />
+                        </ColorPicker>
+
                         <MilkshakeIcon
                             iconColorA={formik.values.iconColorA}
                             iconColorB={formik.values.iconColorB}
                         />
 
-                        <input
-                            id="iconColorB"
-                            type="text"
-                            placeholder="iconColorB"
-                            onChange={formik.handleChange}
-                        />
+                        <ColorPicker>
+                            <Color color="#FF78CE" />
+                            <Color color="#04DEA8" />
+                            <Color color="#FFED4E" />
+                            <Color color="#FF4959" />
+                            <Color color="#6070FF" />
+                            <Color color="#0B2641" />
+
+                            <ColorInput
+                                id="iconColorB"
+                                type="text"
+                                placeholder="#FF78CE"
+                                onChange={formik.handleChange}
+                            />
+                        </ColorPicker>
                     </IconColorPickerWrapper>
 
                     <Title>Download your new icon</Title>

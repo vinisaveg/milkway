@@ -133,10 +133,47 @@ export const TextArea = styled(InputTextArea)`
 
 export const IconColorPickerWrapper = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     margin-bottom: 50px;
+`;
+
+export const ColorPicker = styled.div`
+    max-width: 70px;
+    padding: 10px 10px 15px 10px;
+
+    border-radius: 8px;
+    background-color: #ffffff;
+`;
+
+interface ColorProps {
+    color: string;
+}
+
+export const Color = styled.div<ColorProps>`
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 4px;
+    margin: 5px;
+    background-color: ${(props) => props.color};
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.15s ease-in-out;
+
+    &&:hover {
+        opacity: 1;
+    }
+`;
+
+export const ColorInput = styled.input`
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid ${(props) => props.theme.colors.darkBlue};
 `;
 
 export const MilkshakeWrapper = styled(FormWrapper)``;
