@@ -22,6 +22,7 @@ import { ButtonWrapper } from '../../styles/shared/button/button.styles';
 import { graphqlClient } from '../../config/graphqlClient';
 import { CreateMilkshakeMutation } from '../../graphql/mutations/milkshake/createMilkshake.mutation';
 import { CreateMilkshakeresponse } from '../../types/milkshake/CreateMilkshakeResponse.type';
+import { createMilkshakeSchema } from '../../utils/validation/createMilkshake.schema';
 
 const CreateMilkshakeForm: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
@@ -37,6 +38,7 @@ const CreateMilkshakeForm: FunctionComponent = () => {
             iconColorB: '#FF78CE',
         },
         validateOnChange: false,
+        validationSchema: createMilkshakeSchema,
         onSubmit: () => handleCreateMilkshake(),
     });
 
@@ -82,7 +84,11 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                     {responseError ? (
                         <ErrorLabel>{responseError}</ErrorLabel>
                     ) : (
-                        <ErrorLabel />
+                        <ErrorLabel>
+                            {Object.values(formik.errors).find(
+                                (error) => error
+                            )}
+                        </ErrorLabel>
                     )}
 
                     <InputLabel htmlFor="name">Name</InputLabel>
