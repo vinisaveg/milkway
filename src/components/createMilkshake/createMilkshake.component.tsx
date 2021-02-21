@@ -19,6 +19,9 @@ import {
     FormButton,
 } from './createMilkshake.styles';
 import { ButtonWrapper } from '../../styles/shared/button/button.styles';
+import { graphqlClient } from '../../config/graphqlClient';
+import { CreateMilkshakeMutation } from '../../graphql/mutations/milkshake/createMilkshake.mutation';
+import { CreateMilkshakeresponse } from '../../types/milkshake/CreateMilkshakeResponse.type';
 
 const CreateMilkshakeForm: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
@@ -37,8 +40,32 @@ const CreateMilkshakeForm: FunctionComponent = () => {
         onSubmit: () => handleCreateMilkshake(),
     });
 
-    const handleCreateMilkshake = () => {
-        console.log(formik.values);
+    const handleCreateMilkshake = async () => {
+        const milkshakeIngredients = formik.values.ingredients.split(',');
+
+        const response = await graphqlClient.request<CreateMilkshakeresponse>(
+            CreateMilkshakeMutation,
+            {
+                name: formik.values.name,
+                description: formik.values.description,
+                ingredients: milkshakeIngredients,
+                instructions: formik.values.instructions,
+                iconColorA: formik.values.iconColorA,
+                iconColorB: formik.values.iconColorB,
+            }
+        );
+
+        if (response.createMilkshake.error) {
+            setResponseError(response.createMilkshake.error.message);
+        } else {
+            setResponseError('');
+
+            console.log(response.createMilkshake);
+
+            router.push({
+                pathname: '/home',
+            });
+        }
     };
 
     return (
