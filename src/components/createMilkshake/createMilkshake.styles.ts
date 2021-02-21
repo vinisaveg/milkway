@@ -131,6 +131,14 @@ export const TextArea = styled(InputTextArea)`
     font-family: ${(props) => props.theme.fonts.primary};
 `;
 
+export const IconColorPickerWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 50px;
+`;
+
 export const MilkshakeWrapper = styled(FormWrapper)``;
 
 export const IconWrapper = styled.div`
