@@ -67,8 +67,6 @@ const CreateMilkshakeForm: FunctionComponent = () => {
         } else {
             setResponseError('');
 
-            console.log(response.createMilkshake);
-
             router.push({
                 pathname: '/home',
             });
@@ -158,6 +156,7 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                                 type="text"
                                 placeholder="#FF78CE"
                                 onChange={formik.handleChange}
+                                value={formik.values.iconColorA}
                             />
                         </ColorPicker>
 
@@ -179,6 +178,7 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                                 type="text"
                                 placeholder="#FF78CE"
                                 onChange={formik.handleChange}
+                                value={formik.values.iconColorB}
                             />
                         </ColorPicker>
                     </IconColorPickerWrapper>

@@ -173,6 +173,7 @@ export const ColorInput = styled.input`
     margin: 0 auto;
     border: none;
     outline: none;
+    font-family: ${(props) => props.theme.fonts.primary};
     border-bottom: 1px solid ${(props) => props.theme.colors.darkBlue};
 `;
 
