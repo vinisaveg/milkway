@@ -1,0 +1,9 @@
+{
+    findUserMilkshakes(id: 1) {
+        id
+        name
+        description
+        iconColorA
+        iconColorB
+    }
+}
