@@ -114,11 +114,52 @@ export const InstructionsPreview = styled.div`
     background-color: #0b2641;
     min-height: 350px;
     max-height: 350px;
-    padding: 15px;
+    padding: 15px 30px;
     border-radius: 8px;
     color: ${(props) => props.theme.colors.text.light};
     margin-bottom: 50px;
     overflow-y: scroll;
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+
+    strong {
+        font-weight: bold;
+    }
+
+    ul {
+        list-style: circle;
+        margin-bottom: 10px;
+        margin-left: 15px;
+    }
+
+    ol {
+        list-style: decimal;
+        margin-bottom: 10px;
+        margin-left: 15px;
+    }
 `;
 
 export const UsernameLabel = styled.span`

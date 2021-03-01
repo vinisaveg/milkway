@@ -1,5 +1,7 @@
 import { useRouter } from 'next/router';
-import { FunctionComponent } from 'react';
+import { FunctionComponent, useEffect } from 'react';
+import marked from 'marked';
+
 import {
     Button,
     ButtonWrapper,
@@ -36,6 +38,15 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
         'Ingredient 5',
         'Ingredient 6',
     ];
+
+    useEffect(() => {
+        document.getElementById('instructionsPreview').innerHTML = marked(
+            '# Marked in the browser\n\nRendered by **marked**.\n\n- test\n\n1. ola',
+            {
+                gfm: true,
+            }
+        );
+    }, []);
 
     return (
         <BorderWrapper>
@@ -94,7 +105,7 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
                 <InstructionsWrapper>
                     <Title>Instructions</Title>
 
-                    <InstructionsPreview></InstructionsPreview>
+                    <InstructionsPreview id="instructionsPreview"></InstructionsPreview>
 
                     <Text>
                         By <UsernameLabel>username</UsernameLabel>
