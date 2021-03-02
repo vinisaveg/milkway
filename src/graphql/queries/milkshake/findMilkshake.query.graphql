@@ -1,0 +1,19 @@
+{
+    findMilkshake(id: 1) {
+        milkshake {
+            id
+            userId
+            name
+            description
+            ingredients
+            instructions
+            iconColorA
+            iconColorB
+        }
+        success
+        error {
+            message
+            field
+        }
+    }
+}

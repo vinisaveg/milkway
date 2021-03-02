@@ -78,6 +78,12 @@ export const IconWrapper = styled.div`
     height: 120px;
     align-items: flex-end;
     margin-bottom: 50px;
+
+    @media only screen and (max-width: 550px) {
+        .export-btn {
+            width: 40%;
+        }
+    }
 `;
 
 export const IngredientsWrapper = styled.ul`
@@ -145,7 +151,14 @@ export const InstructionsPreview = styled.div`
         margin-bottom: 5px;
     }
 
-    strong {
+    strong,
+    em {
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: underline;
+        color: ${(props) => props.theme.colors.primary};
         font-weight: bold;
     }
 

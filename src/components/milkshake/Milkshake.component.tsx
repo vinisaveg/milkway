@@ -41,7 +41,7 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
 
     useEffect(() => {
         document.getElementById('instructionsPreview').innerHTML = marked(
-            '# Marked in the browser\n\nRendered by **marked**.\n\n- test\n\n1. ola',
+            '# Test\n\n1. This is the first test\n2. Later on Im gonna make this a markdown text\n\n*Follow me on Github*',
             {
                 gfm: true,
             }
@@ -59,6 +59,7 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
                         />
 
                         <ButtonWrapper
+                            className="export-btn"
                             margin={['0px', '0px', '0px', '30px']}
                             width="30%"
                             color="secondary"
