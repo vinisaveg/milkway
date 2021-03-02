@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
-import { FunctionComponent, useEffect } from 'react';
-import marked from 'marked';
+import { FunctionComponent } from 'react';
 import { graphqlClient } from '../../config/graphqlClient';
 import { RequestDocument } from 'graphql-request/dist/types';
 import useSWR from 'swr';
@@ -22,9 +21,10 @@ import {
     Ingredient,
     ButtonsWrapper,
     InstructionsWrapper,
-    InstructionsPreview,
+    InstructionsPreviewWrapper,
     UsernameLabel,
 } from './milkshake.styles';
+import InstructionsPreview from '../instructionsPreview/InstructionsPreview.component';
 
 import { FindMilkshakeQuery } from '../../graphql/queries/milkshake/findMilkshake.query';
 import { FindMilkshakeResponse } from '../../types/milkshake/FindMilkshakeResponse.type';
@@ -111,9 +111,13 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
                     <InstructionsWrapper>
                         <Title>Instructions</Title>
 
-                        <InstructionsPreview id="instructionsPreview">
-                            {marked(data.findMilkshake.milkshake.instructions)}
-                        </InstructionsPreview>
+                        <InstructionsPreviewWrapper>
+                            <InstructionsPreview
+                                instructions={
+                                    data.findMilkshake.milkshake.instructions
+                                }
+                            />
+                        </InstructionsPreviewWrapper>
 
                         <Text>
                             By{' '}

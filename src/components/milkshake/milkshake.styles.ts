@@ -116,7 +116,7 @@ export const InstructionsWrapper = styled(ContentWrapper)`
     }
 `;
 
-export const InstructionsPreview = styled.div`
+export const InstructionsPreviewWrapper = styled.div`
     background-color: #0b2641;
     min-height: 350px;
     max-height: 350px;
