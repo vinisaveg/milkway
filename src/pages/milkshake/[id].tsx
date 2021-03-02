@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react';
 import { useRouter } from 'next/router';
+import { GetServerSideProps } from 'next';
 
 import {
     GlobalWrapper,
@@ -9,11 +10,11 @@ import Navbar from '../../components/navbar/Navbar.component';
 import Footer from '../../sections/footer/Footer.section';
 import Milkshake from '../../components/milkshake/Milkshake.component';
 
-const MilkshakeById: FunctionComponent = () => {
-    const router = useRouter();
+interface MilkshakeByIdProps {
+    id: string;
+}
 
-    const { id } = router.query;
-
+const MilkshakeById: FunctionComponent<MilkshakeByIdProps> = ({ id }) => {
     return (
         <GlobalWrapper backgroundColor="darkBlue">
             <Main>
@@ -25,6 +26,16 @@ const MilkshakeById: FunctionComponent = () => {
             <Footer />
         </GlobalWrapper>
     );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const { id } = context.params;
+
+    return {
+        props: {
+            id,
+        },
+    };
 };
 
 export default MilkshakeById;
