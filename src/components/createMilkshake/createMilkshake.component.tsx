@@ -28,6 +28,7 @@ import { CreateMilkshakeMutation } from '../../graphql/mutations/milkshake/creat
 import { CreateMilkshakeresponse } from '../../types/milkshake/CreateMilkshakeResponse.type';
 import { createMilkshakeSchema } from '../../utils/validation/createMilkshake.schema';
 import MilkshakeIcon from '../milkshakeIcon/MilkshakeIcon.component';
+import { exportMilkshakeIcon } from '../../utils/functions/exportMilkshakeIcon';
 
 const CreateMilkshakeForm: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
@@ -71,6 +72,10 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                 pathname: '/home',
             });
         }
+    };
+
+    const handleExportMilkshakeIcon = () => {
+        exportMilkshakeIcon(formik.values.name);
     };
 
     return (
@@ -199,7 +204,11 @@ const CreateMilkshakeForm: FunctionComponent = () => {
 
                     <ButtonsWrapper>
                         <ButtonWrapper width="40%" color="primary">
-                            <FormButton type="button" color="primary">
+                            <FormButton
+                                onClick={handleExportMilkshakeIcon}
+                                type="button"
+                                color="primary"
+                            >
                                 Export
                             </FormButton>
                         </ButtonWrapper>
