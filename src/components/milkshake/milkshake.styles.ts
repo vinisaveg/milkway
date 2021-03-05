@@ -126,6 +126,22 @@ export const InstructionsPreviewWrapper = styled.div`
     margin-bottom: 50px;
     overflow-y: scroll;
 
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #1a3b5a;
+    }
+
     h1 {
         font-size: 24px;
         font-weight: bold;

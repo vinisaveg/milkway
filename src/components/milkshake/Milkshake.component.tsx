@@ -28,6 +28,7 @@ import InstructionsPreview from '../instructionsPreview/InstructionsPreview.comp
 
 import { FindMilkshakeQuery } from '../../graphql/queries/milkshake/findMilkshake.query';
 import { FindMilkshakeResponse } from '../../types/milkshake/FindMilkshakeResponse.type';
+import { exportMilkshakeIcon } from '../../utils/functions/exportMilkshakeIcon';
 
 interface MilkshakeProps {
     id: string;
@@ -45,6 +46,10 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
         FindMilkshakeQuery,
         fetcher
     );
+
+    const handleExportMilkshakeIcon = () => {
+        exportMilkshakeIcon(data?.findMilkshake?.milkshake.name);
+    };
 
     if (data?.findMilkshake?.milkshake) {
         return (
@@ -67,7 +72,11 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
                                 width="30%"
                                 color="secondary"
                             >
-                                <Button type="button" color="secondary">
+                                <Button
+                                    onClick={handleExportMilkshakeIcon}
+                                    type="button"
+                                    color="secondary"
+                                >
                                     Export
                                 </Button>
                             </ButtonWrapper>
