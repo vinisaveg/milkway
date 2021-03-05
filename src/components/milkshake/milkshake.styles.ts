@@ -128,6 +128,7 @@ export const InstructionsPreviewWrapper = styled.div`
 
     ::-webkit-scrollbar {
         width: 12px;
+        border-radius: 8px;
     }
 
     ::-webkit-scrollbar-track {
@@ -135,6 +136,10 @@ export const InstructionsPreviewWrapper = styled.div`
     }
 
     ::-webkit-scrollbar-track {
+        border-radius: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
         border-radius: 8px;
     }
 
@@ -163,8 +168,14 @@ export const InstructionsPreviewWrapper = styled.div`
         margin-bottom: 15px;
     }
 
+    blockquote {
+        opacity: 0.8;
+        font-style: italic;
+        margin-bottom: 15px;
+    }
+
     p {
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 
     strong,
@@ -176,6 +187,15 @@ export const InstructionsPreviewWrapper = styled.div`
         text-decoration: underline;
         color: ${(props) => props.theme.colors.primary};
         font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    pre {
+        background-color: #112942;
+        padding: 10px;
+        border-radius: 8px;
+        margin: 20px 0px;
     }
 
     ul {
