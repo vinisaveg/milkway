@@ -85,8 +85,9 @@ const CreateMilkshakeForm: FunctionComponent = () => {
                     <Title>Create your awesome recipe</Title>
 
                     <Text>
-                        All the needed ingredients and a step by step
-                        instruction are essential
+                        Give the instructions to prepare your wondrous milkshake
+                        recipe. All the needed ingredients and a step by step
+                        instruction is essential.
                     </Text>
 
                     {responseError ? (
