@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 `;
 
 export const MilkshakeBorderWrapper = styled.div`
-    width: 25%;
+    width: 22%;
     border: 1px solid ${(props) => props.theme.colors.secondary};
     border-radius: 8px;
     transition: all 0.22s ease-in;
@@ -23,9 +24,20 @@ export const MilkshakeBorderWrapper = styled.div`
         }
     }
 
+    @media only screen and (max-width: 1380px) {
+        width: 30%;
+    }
+
+    @media only screen and (max-width: 980px) {
+        width: 46%;
+    }
+
+    @media only screen and (max-width: 700px) {
+        width: 100%;
+    }
+
     @media only screen and (max-width: 520px) {
         border-color: transparent;
-        width: 100%;
     }
 `;
 
@@ -54,7 +66,6 @@ export const MilkshakeWrapper = styled.div`
 
 export const MilkshakeIconWrapper = styled.div`
     display: inline-block;
-    margin-bottom: 30px;
 `;
 
 export const MilkshakeName = styled.h2`
@@ -70,5 +81,13 @@ export const MilkshakeDescription = styled.p`
     color: ${(props) => props.theme.colors.text.light};
     font-size: 18px;
     text-align: center;
-    max-width: 80%;
+    max-width: 190px;
+    min-width: 190px;
+
+    min-height: 50px;
+    max-height: 50px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 `;

@@ -13,7 +13,7 @@ const InstructionsPreview: FunctionComponent<InstructonsPreviewProps> = ({
         document.getElementById('instructionsPreview').innerHTML = marked(
             instructions
         );
-    }, []);
+    }, [instructions]);
 
     return <div id="instructionsPreview" />;
 };

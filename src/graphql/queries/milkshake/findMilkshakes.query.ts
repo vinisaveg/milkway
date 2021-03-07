@@ -5,6 +5,7 @@ export const FindMilkshakesQuery = gql`
         findMilkshakes(limit: $limit) {
             id
             name
+            description
             iconColorA
             iconColorB
         }
