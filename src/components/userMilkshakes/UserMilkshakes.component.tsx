@@ -72,11 +72,23 @@ const UserMilkshakes: FunctionComponent = () => {
                                             />
                                         </svg>
                                     </MilkshakeIconWrapper>
-                                    <MilkshakeName>
+                                    <MilkshakeName
+                                        className={
+                                            milkshake.name.length >= 40
+                                                ? 'textStyles'
+                                                : ''
+                                        }
+                                    >
                                         {milkshake.name}
                                     </MilkshakeName>
 
-                                    <MilkshakeDescription>
+                                    <MilkshakeDescription
+                                        className={
+                                            milkshake.description.length >= 40
+                                                ? 'textStyles'
+                                                : ''
+                                        }
+                                    >
                                         {milkshake.description}
                                     </MilkshakeDescription>
                                 </MilkshakeWrapper>

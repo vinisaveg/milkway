@@ -68,6 +68,12 @@ export const ContentWrapper = styled.div`
             display: none;
         }
     }
+
+    .textStyles {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
 `;
 
 export const MilkshakeWrapper = styled.div`
@@ -102,6 +108,7 @@ export const MilkshakeName = styled.h2`
     margin-bottom: 30px;
     text-align: center;
     max-width: 80%;
+    min-height: 55px;
 `;
 
 export const MilkshakeDescription = styled.p`
