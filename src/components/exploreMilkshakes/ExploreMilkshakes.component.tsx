@@ -10,14 +10,10 @@ import { MilkshakeIconWrapper } from './exploreMilkshakes.styles';
 import {
     MilkshakeDescription,
     MilkshakeName,
-} from '../userMilkshakes/userMilkshakes.styles';
-
-import {
     Wrapper,
     MilkshakeBorderWrapper,
     MilkshakeWrapper,
 } from './exploreMilkshakes.styles';
-
 interface ExploreMilkshakesProps {
     data?: any;
 }
@@ -72,9 +68,23 @@ const ExploreMilkshakes: FunctionComponent<ExploreMilkshakesProps> = () => {
                                     />
                                 </svg>
                             </MilkshakeIconWrapper>
-                            <MilkshakeName>{milkshake.name}</MilkshakeName>
+                            <MilkshakeName
+                                className={
+                                    milkshake.name.length >= 40
+                                        ? 'textStyles'
+                                        : ''
+                                }
+                            >
+                                {milkshake.name}
+                            </MilkshakeName>
 
-                            <MilkshakeDescription>
+                            <MilkshakeDescription
+                                className={
+                                    milkshake.description.length >= 40
+                                        ? 'textStyles'
+                                        : ''
+                                }
+                            >
                                 {milkshake.description}
                             </MilkshakeDescription>
                         </MilkshakeWrapper>
