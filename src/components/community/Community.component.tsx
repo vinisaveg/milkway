@@ -20,7 +20,13 @@ import { graphqlClient } from '../../config/graphqlClient';
 import { FindMilkshakesQuery } from '../../graphql/queries/milkshake/findMilkshakes.query';
 import { FindMilkshakesResponse } from '../../types/milkshake/FindMilkshakesResponse.type';
 
-export const Community: FunctionComponent = () => {
+interface CommunityProps {
+    communityMilkshakes: FindMilkshakesResponse;
+}
+
+export const Community: FunctionComponent<CommunityProps> = ({
+    communityMilkshakes,
+}) => {
     const [
         milkshakeWrapperPosition,
         setMilkshakeWrapperPosition,
@@ -31,7 +37,8 @@ export const Community: FunctionComponent = () => {
 
     const { data, error } = useSWR<FindMilkshakesResponse>(
         FindMilkshakesQuery,
-        fetcher
+        fetcher,
+        { initialData: communityMilkshakes }
     );
 
     const handleMilkshakeWrapperPosition = () => {

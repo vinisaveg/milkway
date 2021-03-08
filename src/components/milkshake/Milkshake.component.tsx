@@ -32,7 +32,7 @@ import { exportMilkshakeIcon } from '../../utils/functions/exportMilkshakeIcon';
 
 interface MilkshakeProps {
     id: string;
-    milkshake: any;
+    milkshake: FindMilkshakeResponse;
 }
 
 const Milkshake: FunctionComponent<MilkshakeProps> = ({ id, milkshake }) => {
