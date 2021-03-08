@@ -32,9 +32,10 @@ import { exportMilkshakeIcon } from '../../utils/functions/exportMilkshakeIcon';
 
 interface MilkshakeProps {
     id: string;
+    milkshake: any;
 }
 
-const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
+const Milkshake: FunctionComponent<MilkshakeProps> = ({ id, milkshake }) => {
     const router = useRouter();
 
     const fetcher = (query: RequestDocument) =>
@@ -44,7 +45,8 @@ const Milkshake: FunctionComponent<MilkshakeProps> = ({ id }) => {
 
     const { data, error } = useSWR<FindMilkshakeResponse>(
         FindMilkshakeQuery,
-        fetcher
+        fetcher,
+        { initialData: milkshake }
     );
 
     const handleExportMilkshakeIcon = () => {
