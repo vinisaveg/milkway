@@ -1,4 +1,5 @@
 import { RequestDocument } from 'graphql-request/dist/types';
+import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { FunctionComponent } from 'react';
 import useSWR from 'swr';
@@ -15,16 +16,19 @@ import {
     MilkshakeWrapper,
 } from './exploreMilkshakes.styles';
 interface ExploreMilkshakesProps {
-    data?: any;
+    milkshakes: FindMilkshakesResponse;
 }
 
-const ExploreMilkshakes: FunctionComponent<ExploreMilkshakesProps> = () => {
+const ExploreMilkshakes: FunctionComponent<ExploreMilkshakesProps> = ({
+    milkshakes,
+}) => {
     const fetcher = (query: RequestDocument) =>
         graphqlClient.request(query, { limit: 8 });
 
     const { data, error } = useSWR<FindMilkshakesResponse>(
         FindMilkshakesQuery,
-        fetcher
+        fetcher,
+        { initialData: milkshakes }
     );
 
     return (
