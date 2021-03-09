@@ -2,12 +2,13 @@
    <img src=".github/Banner.png" width="100%"/>
 </p>
 
-> A whole galaxy of flavour
+> The Intergalactic lab for milkshakes
 
 ## About :question:
 
-milkway is an open web app to share milkshake recipes, so if you have a recipe, you can share with the community.
-A well prepared milkshake can cheer anyone up, so grab some recipes and start drinking ;)
+milkway is an open web app to share milkshake recipes.
+
+In these hard times we are living in, a well prepared milkshake can cheer anyone up, so grab some recipes and start drinking.
 
 ## Techs :computer:
 

@@ -11,7 +11,7 @@ const MyApp: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
     return (
         <ThemeProvider theme={theme}>
             <Head>
-                <title>milkway | Drink your way to the moon</title>
+                <title>milkway | The Intergalactic lab for milkshakes</title>
             </Head>
 
             <Component {...pageProps} />
