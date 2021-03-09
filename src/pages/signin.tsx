@@ -27,9 +27,19 @@ import {
 } from '../styles/pages/signinRegister/signInRegister.styles';
 import { ButtonWrapper } from '../styles/shared/button/button.styles';
 
+import { useAuth } from '../hooks/auth/auth';
+
 const SignIn: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
     const router = useRouter();
+
+    const { data } = useAuth();
+
+    if (data?.authUser) {
+        router.push({
+            pathname: '/home',
+        });
+    }
 
     const formik = useFormik({
         initialValues: {

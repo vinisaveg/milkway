@@ -24,9 +24,19 @@ import { graphqlClient } from '../config/graphqlClient';
 import { registerUserMutation } from '../graphql/mutations/user/register.mutation';
 import { RegisterResponse } from '../types/auth/RegisterResponse.type';
 
+import { useAuth } from '../hooks/auth/auth';
+
 export const Register: FunctionComponent = () => {
     const [responseError, setResponseError] = useState<string>('');
     const router = useRouter();
+
+    const { data } = useAuth();
+
+    if (data?.authUser) {
+        router.push({
+            pathname: '/home',
+        });
+    }
 
     const formik = useFormik({
         initialValues: {

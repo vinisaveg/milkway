@@ -31,8 +31,7 @@ const UserMilkshakes: FunctionComponent<UserMilkshakesProps> = ({
 
     const { data, error } = useSWR<FindUserMilkshakesResponse>(
         FindUserMilkshakesQuery,
-        fetcher,
-        { initialData: userMilkshakes }
+        fetcher
     );
 
     if (data?.findUserMilkshakes.length > 0) {
