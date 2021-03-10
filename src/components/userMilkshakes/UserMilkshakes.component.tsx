@@ -11,6 +11,7 @@ import {
     BorderWrapper,
     Wrapper,
     ContentWrapper,
+    NoMilkshakeMessage,
     MilkshakeWrapper,
     MilkshakeIconWrapper,
     MilkshakeName,
@@ -34,11 +35,17 @@ const UserMilkshakes: FunctionComponent<UserMilkshakesProps> = ({
         fetcher
     );
 
-    if (data?.findUserMilkshakes.length > 0) {
+    if (data?.findUserMilkshakes) {
         return (
             <BorderWrapper>
                 <Wrapper className="wrapper">
                     <ContentWrapper>
+                        {data?.findUserMilkshakes.length < 1 ? (
+                            <NoMilkshakeMessage>
+                                You don't have milkshakes yet :(
+                            </NoMilkshakeMessage>
+                        ) : null}
+
                         {data?.findUserMilkshakes?.map((milkshake) => (
                             <Link
                                 key={milkshake.id}

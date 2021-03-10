@@ -76,6 +76,17 @@ export const ContentWrapper = styled.div`
     }
 `;
 
+export const NoMilkshakeMessage = styled.h2`
+    color: ${(props) => props.theme.colors.text.light};
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+`;
+
 export const MilkshakeWrapper = styled.div`
     width: 33.33%;
     height: 100%;
