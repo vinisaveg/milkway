@@ -4,6 +4,10 @@
 
 > The Intergalactic lab for milkshakes
 
+<p align="center">
+   <img src=".github/milkway.gif" width="100%"/>
+</p>
+
 ## About :question:
 
 milkway is an open web app to share milkshake recipes.
